@@ -1,7 +1,7 @@
 /* =========================================================
    1. CONFIG — paste your deployed Google Apps Script URL here
    ========================================================= */
-const GOOGLE_SCRIPT_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzN2_XNDESgoXVQV_DV0Ck6vavuVKDT4zvtVRsGgkQJbJbxIuoO1MwpqY2sLcFqcsP2/exec";
 
 /* =========================================================
    2. BUNTING BANNER (signature element, drawn once)
