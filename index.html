@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+<title>Zeke's Christening & First Birthday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ambient confetti backdrop -->
+<div class="confetti-field" aria-hidden="true"></div>
+
+<div class="app">
+
+  <!-- BUNTING SIGNATURE BANNER -->
+  <svg class="bunting" viewBox="0 0 400 46" preserveAspectRatio="none" aria-hidden="true">
+    <line x1="0" y1="4" x2="400" y2="4" stroke="#E8DCC8" stroke-width="2"/>
+    <g id="bunting-flags"></g>
+  </svg>
+
+  <!-- progress trail, shown once guest says yes -->
+  <nav class="trail" id="trail" hidden>
+    <button class="trail-dot" data-goto="details" aria-label="Reception details">1</button>
+    <span class="trail-line"></span>
+    <button class="trail-dot" data-goto="dresscode" aria-label="Dress code">2</button>
+    <span class="trail-line"></span>
+    <button class="trail-dot" data-goto="gifts" aria-label="Gift guide">3</button>
+    <span class="trail-line"></span>
+    <button class="trail-dot" data-goto="rsvp" aria-label="RSVP">4</button>
+  </nav>
+
+  <main id="stage">
+
+    <!-- ================= SCREEN: INVITATION ================= -->
+    <section class="screen active" id="screen-invite" data-screen>
+      <p class="eyebrow">you're invited to</p>
+
+      <div class="arch-wrap">
+        <svg class="arch" viewBox="0 0 300 172" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+          <path d="M8,172 A142,142 0 0 1 292,172" fill="none" stroke="#FF8C74" stroke-width="26"/>
+          <path d="M38,172 A112,112 0 0 1 262,172" fill="none" stroke="#FFDE84" stroke-width="26"/>
+          <path d="M68,172 A82,82 0 0 1 232,172" fill="none" stroke="#ABE8CA" stroke-width="26"/>
+          <path d="M98,172 A52,52 0 0 1 202,172" fill="none" stroke="#B9DDF3" stroke-width="26"/>
+        </svg>
+        <h1 class="title arch-title">Christening &amp;<br/>First Birthday</h1>
+      </div>
+
+      <div class="hero-stage">
+        <span class="sparkle sparkle-1">✦</span>
+        <span class="sparkle sparkle-2">✦</span>
+        <span class="sparkle sparkle-3">✦</span>
+        <img class="hero-img" src="images/zeke-waving.png" alt="Zeke smiling in his christening outfit" />
+        <p class="hero-name">Zeke</p>
+      </div>
+
+      <div class="ticket rsvp-question">
+        <p class="ticket-label">Will you attend?</p>
+        <div class="choice-buttons">
+          <button class="btn btn-primary" id="btn-yes">Yes, I'll be there!</button>
+          <button class="btn btn-ghost" id="btn-no">Sorry, can't make it</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN: DECLINE MESSAGE ================= -->
+    <section class="screen" id="screen-decline" data-screen>
+      <p class="eyebrow">we'll miss you</p>
+      <h2 class="title title-sm">Leave a Message<br/>for Our Baby</h2>
+      <p class="subtitle">Zeke won't remember today, but we'll read this to him one day.</p>
+
+      <div class="hero-photo hero-photo-sm">
+        <img src="images/zeke-sitting.png" alt="Zeke sitting in his christening outfit" />
+      </div>
+
+      <form class="ticket form-card" id="form-decline">
+        <label class="field">
+          <span class="field-label">Your name</span>
+          <input type="text" id="decline-name" placeholder="e.g. Tita Grace" required />
+        </label>
+        <label class="field">
+          <span class="field-label">Your message</span>
+          <textarea id="decline-message" rows="4" placeholder="Write your blessing or well-wishes here..." required></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        <button type="button" class="btn btn-text" data-goto="invite">&larr; Back to invitation</button>
+      </form>
+    </section>
+
+    <!-- ================= SCREEN: DECLINE THANK YOU ================= -->
+    <section class="screen" id="screen-decline-thanks" data-screen>
+      <div class="thanks-wrap">
+        <span class="thanks-emoji">💌</span>
+        <h2 class="title title-sm">Message Received</h2>
+        <p class="subtitle">Thank you for the kind words — Zeke's mom and dad appreciate it so much. We'll miss having you there!</p>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN: RECEPTION DETAILS ================= -->
+    <section class="screen" id="screen-details" data-screen>
+      <p class="eyebrow step-eyebrow">step 1 of 4</p>
+      <h2 class="title title-sm">Details of<br/>the Reception</h2>
+
+      <div class="ticket detail-card">
+        <div class="detail-row">
+          <span class="detail-icon">📍</span>
+          <div>
+            <p class="detail-label">Venue</p>
+            <p class="detail-value">Jollibee &ndash; Vicas Camarin</p>
+          </div>
+        </div>
+        <div class="detail-divider"></div>
+        <div class="detail-row">
+          <span class="detail-icon">🕚</span>
+          <div>
+            <p class="detail-label">Time</p>
+            <p class="detail-value">11:00 AM</p>
+          </div>
+        </div>
+        <div class="detail-divider"></div>
+        <div class="detail-row">
+          <span class="detail-icon">🗺️</span>
+          <div>
+            <p class="detail-label">Address</p>
+            <p class="detail-value">P2XP+5HW, 173, Caloocan,<br/>Metro Manila</p>
+          </div>
+        </div>
+        <a class="btn btn-primary btn-block" href="https://maps.app.goo.gl/EKfCiF1JJcvKczJp6" target="_blank" rel="noopener">Open in Google Maps</a>
+      </div>
+
+      <button class="btn btn-ghost btn-block" data-goto="dresscode">Next: Dress Code &rarr;</button>
+    </section>
+
+    <!-- ================= SCREEN: DRESS CODE ================= -->
+    <section class="screen" id="screen-dresscode" data-screen>
+      <p class="eyebrow step-eyebrow">step 2 of 4</p>
+      <h2 class="title title-sm">Dress Code</h2>
+      <p class="subtitle">Pastel Colors <span class="or-divider">or</span> Carnival Theme</p>
+
+      <div class="ticket dresscode-card">
+        <p class="dresscode-caption">pick your palette</p>
+        <div class="swatch-row">
+          <span class="swatch" style="--c:#FFC1D6" title="Pastel Pink"></span>
+          <span class="swatch" style="--c:#FFE08A" title="Pastel Yellow"></span>
+          <span class="swatch" style="--c:#B8EDD1" title="Pastel Mint"></span>
+          <span class="swatch" style="--c:#B9DDF3" title="Pastel Blue"></span>
+          <span class="swatch" style="--c:#D9C7F0" title="Pastel Lilac"></span>
+        </div>
+        <p class="dresscode-caption dresscode-caption-alt">or bring the big top to life</p>
+        <div class="carnival-stripe" aria-hidden="true"></div>
+        <p class="dresscode-note">Think stripes, bold pastels, and a little bit of circus sparkle 🎪</p>
+      </div>
+
+      <button class="btn btn-ghost btn-block" data-goto="gifts">Next: Gift Guide &rarr;</button>
+    </section>
+
+    <!-- ================= SCREEN: GIFT GUIDE ================= -->
+    <section class="screen" id="screen-gifts" data-screen>
+      <p class="eyebrow step-eyebrow">step 3 of 4</p>
+      <h2 class="title title-sm">Gift Guide</h2>
+      <p class="subtitle">Your presence is the real gift &mdash; but if you're wondering, here are a few ideas</p>
+
+      <div class="gift-grid">
+        <div class="gift-tag"><span class="gift-emoji">🧴</span><span>EQ Wipes</span></div>
+        <div class="gift-tag"><span class="gift-emoji">🧩</span><span>Montessori Toys</span></div>
+        <div class="gift-tag"><span class="gift-emoji">👕</span><span>Clothes for 18+ months</span></div>
+        <div class="gift-tag"><span class="gift-emoji">🍼</span><span>Unilove Bottle Cleanser</span></div>
+        <div class="gift-tag"><span class="gift-emoji">🧴</span><span>Lactacyd Baby Blue (Body &amp; Hair Wash)</span></div>
+        <div class="gift-tag"><span class="gift-emoji">💌</span><span>Monetary Gift</span></div>
+      </div>
+
+      <button class="btn btn-ghost btn-block" data-goto="rsvp">Next: RSVP &rarr;</button>
+    </section>
+
+    <!-- ================= SCREEN: RSVP ================= -->
+    <section class="screen" id="screen-rsvp" data-screen>
+      <p class="eyebrow step-eyebrow">step 4 of 4</p>
+      <h2 class="title title-sm">RSVP</h2>
+      <p class="subtitle">Let us know you're coming so we can save you a seat</p>
+
+      <form class="ticket form-card" id="form-rsvp">
+        <label class="field">
+          <span class="field-label">Your name</span>
+          <input type="text" id="rsvp-name" placeholder="e.g. Juan Dela Cruz" required />
+        </label>
+
+        <div class="field">
+          <span class="field-label">Bringing anyone with you?</span>
+          <div class="counter">
+            <button type="button" class="counter-btn" id="counter-minus" aria-label="Decrease">&minus;</button>
+            <span class="counter-value" id="counter-value">0</span>
+            <button type="button" class="counter-btn" id="counter-plus" aria-label="Increase">&plus;</button>
+          </div>
+          <p class="counter-hint">up to 2 additional guests</p>
+        </div>
+
+        <div class="companion-list" id="companion-list"></div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="rsvp-submit">Confirm My Attendance</button>
+      </form>
+    </section>
+
+    <!-- ================= SCREEN: RSVP THANK YOU ================= -->
+    <section class="screen" id="screen-thanks" data-screen>
+      <div class="thanks-wrap">
+        <div class="hero-photo hero-photo-sm">
+          <img src="images/zeke-sitting.png" alt="Zeke celebrating" />
+        </div>
+        <span class="thanks-emoji">🎉</span>
+        <h2 class="title title-sm">You're All Set!</h2>
+        <p class="subtitle">Thank you for confirming. We can't wait to celebrate with you at Zeke's christening &amp; first birthday!</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
